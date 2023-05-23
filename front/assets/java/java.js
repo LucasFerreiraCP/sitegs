@@ -1,12 +1,57 @@
-window.onload = function() {
-  //Abaixo está a função para o menu mobile ser aberto.
-  document.querySelector(".menu-mobile").addEventListener("click", function() {
-    if (document.querySelector("nav").style.display == 'flex') {
-      document.querySelector("nav").style.display = 'none';
+window.onload = function () {
+  var menuMobile = document.querySelector(".menu-mobile");
+  var nav = document.querySelector("nav");
+
+  // Abrir/fechar o menu mobile
+  menuMobile.addEventListener("click", function () {
+    if (nav.style.display === 'flex') {
+      nav.style.display = 'none';
     } else {
-      document.querySelector("nav").style.display = 'flex';
+      nav.style.display = 'flex';
     }
   });
+
+  // Fechar o menu ao clicar fora dele (apenas em dispositivos móveis)
+  document.addEventListener("click", function (event) {
+    if (isMobile() && !menuMobile.contains(event.target) && !nav.contains(event.target)) {
+      nav.style.display = 'none';
+    }
+  });
+
+  // Fechar o menu ao arrastar para o lado (apenas em dispositivos móveis)
+  if (isMobile()) {
+    var touchStartX = 0;
+    var touchEndX = 0;
+
+    document.addEventListener("touchstart", function (event) {
+      touchStartX = event.touches[0].clientX;
+    });
+
+    document.addEventListener("touchend", function (event) {
+      touchEndX = event.changedTouches[0].clientX;
+      handleSwipeGesture();
+    });
+
+    function handleSwipeGesture() {
+      var swipeThreshold = 50; // Defina a distância mínima para o gesto de arrastar
+
+      if (touchEndX - touchStartX > swipeThreshold) {
+        // Fechar o menu ao arrastar para a direita
+        nav.style.display = 'none';
+      }
+    }
+  }
+
+  // Função para verificar se o dispositivo é móvel
+  function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
+
+
+
+
+
+
 
   //Abaixo está o código para que o plano de fundo mude sozinho ou ao ser clicado nos pontinhos
   //Função para alterar o tempo que o fundo vai atualizar atualmente 5 segundos = 5000
@@ -90,63 +135,100 @@ window.onload = function() {
 
 
   // Abrir o modal ao clicar no botão "Agende uma demonstração"
-  agendarButton.addEventListener("click", function(event) {
+  agendarButton.addEventListener("click", function (event) {
     event.preventDefault();
     modal.style.display = "block";
   });
 
   // Código para fechar o modal
-  $('.modal-close').click(function() {
+  $('.modal-close').click(function () {
     $('#modal').hide();
   });
 
   // Fechar o modal ao clicar fora da área do modal
-  window.addEventListener("click", function(event) {
+  window.addEventListener("click", function (event) {
     if (event.target === modal) {
       modal.style.display = "none";
     }
   });
 
-    // Código para formatar o número de telefone
-    $(document).ready(function() {
-      $('#phone').inputmask('(99) 99999-9999');
-    });
+  // Código para formatar o número de telefone
+  $(document).ready(function () {
+    $('#phone').inputmask('(99) 99999-9999');
+  });
 
 
-    // Enviar o formulário
+  // Enviar o formulário
 
-document.getElementById("form").addEventListener("click", function() {
-  const nome = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const telefone = document.getElementById("phone").value;
-  const time = document.getElementById("time").value;
+  document.getElementById("form").addEventListener("click", function () {
+    const button = document.getElementById("form");
+    const errorMessage = document.getElementById("error-message");
 
-  const data = {
-    nome: nome,
-    email: email,
-    telefone: telefone,
-    time: time
-  };
+    const nome = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const telefone = document.getElementById("phone").value;
+    const time = document.getElementById("time").value;
 
-  console.log("Enviando formulário...");
-  console.log(data);
-  fetch("http://localhost/public/index.php", {
-    method: "POST",
-    body: JSON.stringify(data),
-    headers: {
-      "Content-Type": "application/json"
+    const data = {
+      nome: nome,
+      email: email,
+      telefone: telefone,
+      time: time
+    };
+
+    if (nome.trim() === '' || email.trim() === '' || telefone.trim() === '') {
+      errorMessage.innerText = "Por favor, preencha todos os campos obrigatórios.";
+      return; // Impede o envio do formulário
+    } else {
+      errorMessage.innerText = ""; // Limpa a mensagem de erro, se houver
     }
-  })
-    .then(response => {
-      if (response.ok) {
-        console.log("Formulário enviado com sucesso");
-      } else {
-        console.error("Erro ao enviar o formulário");
+
+    console.log("Enviando formulário...");
+    console.log(data);
+
+    button.disabled = true; // Desabilitar o botão durante o envio
+
+    fetch("http://192.168.1.249/public/index.php", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
       }
     })
-    .catch(error => {
-      console.error("Erro ao enviar o formulário", error);
-    });
-});
+      .then(response => {
+        if (response.ok) {
+          console.log("Formulário enviado com sucesso");
+          button.innerText = "Formulário Enviado";
+          button.style.backgroundColor = "green";
+
+          setTimeout(function () {
+            button.innerText = "Enviar";
+            button.style.backgroundColor = "#0066ff"; // Cor original do botão
+            button.disabled = false; // Habilitar o botão novamente
+          }, 3000);
+
+          document.getElementById("name").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("phone").value = "";
+          document.getElementById("time").value = "";
+        } else {
+          console.error("Erro ao enviar o formulário");
+        }
+      })
+      .catch(error => {
+        console.error("Erro ao enviar o formulário", error);
+      });
+  });
+
+
+
+
+
+
+
+
 
 };
+
+
+

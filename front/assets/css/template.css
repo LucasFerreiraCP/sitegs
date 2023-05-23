@@ -129,16 +129,20 @@ header {
     color: #0066ff;
     text-shadow: 0px 0px 8px #000;
 }
+
 .banner h1 #frase-principal {
     color: #fff;
 }
+
 .banner h2 {
     text-transform: uppercase;
     margin-top: 20px;
 }
+
 .banner h1 #frase-secundaria {
     color: #0066ff;
 }
+
 .banner a {
     display: block;
     background-color: #0066ff;
@@ -184,7 +188,7 @@ header {
     background-color: #0066ff;
 }
 
-/* Abaixo está o codigo para modificações no modal */ 
+/* Abaixo está o codigo para modificações no modal */
 
 .modal {
     display: none;
@@ -196,9 +200,9 @@ header {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     position: relative;
     background-color: #f8f8f8;
     margin: 15% auto;
@@ -207,45 +211,33 @@ header {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     max-width: 400px;
     width: 90%;
-  
+
     animation-name: modal-animation;
     animation-duration: 2s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-  }
-  
-  @keyframes modal-animation {
-    0% {
-      background-color: #ffffff;
-    }
-    50% {
-      background-color: #afc6fc; /* Azul claro */
-    }
-    100% {
-      background-color: #ffffff;
-    }
-  }
-  
-  .modal-title {
+}
+
+.modal-title {
     text-align: center;
     font-size: 24px;
     margin-bottom: 20px;
     margin-top: 10px;
-  }
-  
-  .modal-input {
+}
+
+.modal-input {
     width: 100%;
     margin-bottom: 20px;
-  }
-  
-  .modal-input input {
+}
+
+.modal-input input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
-  
-  .modal-button {
+}
+
+.modal-button {
     display: block;
     width: 100%;
     padding: 10px;
@@ -256,13 +248,13 @@ header {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-  
-  .modal-button:hover {
+}
+
+.modal-button:hover {
     background-color: #0052cc;
-  }
-  
-  .modal-close {
+}
+
+.modal-close {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -271,19 +263,17 @@ header {
     background: none;
     border: none;
     cursor: pointer;
-  }
-  
-  .modal-close:hover {
+}
+
+.modal-close:hover {
     color: #555;
-  }
-  
-  
-  
-  
-  
-  /* Restante do CSS permanece igual */
-  
-  
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+}
+
 /* Abaixo está o corpo do site s2  */
 
 .default {
@@ -382,16 +372,20 @@ header {
 
 .section-aboutus {
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    justify-content: center;
+    /* Centraliza horizontalmente o conteúdo */
 }
 
 .section-about--left {
     flex: 1;
-    text-align: center; /* Centraliza o texto */
+    text-align: center;
+    /* Centraliza o texto */
     font-size: 14px;
     line-height: 21px;
-    max-width: 550px; /* Define a largura máxima para o texto */
-    margin: 0 auto; /* Centraliza horizontalmente dentro do flex container */
+    max-width: 550px;
+    /* Define a largura máxima para o texto */
+    margin: 0 auto;
+    /* Centraliza horizontalmente dentro do flex container */
 }
 
 
@@ -556,14 +550,14 @@ header {
 
 .section-projetos-fotoinfo {
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.9);
     width: inherit;
     height: inherit;
     display: none;
     justify-content: center;
     font-weight: bold;
     align-items: center;
-    color: #000;
+    color: #fff;
     flex-direction: column;
     cursor: pointer;
 }
@@ -585,33 +579,35 @@ header {
     background-color: #000;
     padding-bottom: 100px;
     padding-top: 100px;
-  }
-  
-  .section-map-area {
+}
+
+.section-map-area {
     display: flex;
     justify-content: center;
-  }
-  
-  .section-map-info {
+}
+
+.section-map-info {
     width: 50%;
-    padding: 30px;
+    padding: 3px;
     background-color: #fff;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 1);
     color: #000;
-    border-radius: 50px;
+    border-radius: 10px;
     font-weight: 600;
     position: relative;
     z-index: 1;
-  }
-  
-  .map-container {
+}
+
+.map-container {
     position: relative;
     width: 100%;
     height: 0;
-    padding-bottom: calc(100% / (16 / 9)); /* Proporção de aspecto 16:9 */
+    padding-bottom: calc(100% / (16 / 9));
+    /* Proporção de aspecto 16:9 */
     overflow: hidden;
-  }
-  
-  #map {
+}
+
+#map {
     position: absolute;
     top: 0;
     left: 0;
@@ -619,22 +615,22 @@ header {
     height: 100%;
     border: 4px solid #fff;
     box-shadow: 0 0 20px #fff;
-  }
-  
-  .contact-info {
+}
+
+.contact-info {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     gap: 10px;
-  }
-  
-  .section-map-info-item {
+}
+
+.section-map-info-item {
     display: flex;
     align-items: center;
     color: #555;
-  }
-  
-  .section-map-info-item-img {
+}
+
+.section-map-info-item-img {
     width: 30px;
     height: 30px;
     display: inline-flex;
@@ -645,13 +641,13 @@ header {
     border-radius: 15px;
     margin-right: 15px;
     margin-bottom: 10px;
-  }
-  
-  .section-map-info-item-img img {
+}
+
+.section-map-info-item-img img {
     width: 15px;
     height: auto;
-  }
-  
+}
+
 
 
 /* //Roda pé do site */
@@ -727,6 +723,7 @@ header {
         margin-right: 30px;
         display: block;
     }
+
     .logoimg {
         margin-left: 20px;
     }
@@ -797,6 +794,7 @@ header {
 
     .section-map-info-item {
         margin-bottom: 20px;
+        
     }
 
     .section-map-info-item:last-child {
@@ -822,7 +820,7 @@ header {
 
     .section-map-info {
         width: 80%;
-      }
+    }
 }
 
 @media (max-width:450px) {
@@ -868,7 +866,7 @@ header {
     .logoimg {
         margin-left: 20px;
     }
-    
+
     .banner h1 {
         font-size: 27px;
     }
@@ -962,7 +960,6 @@ header {
 
     .section-map-info {
         width: auto;
-        margin-right: 15px;
     }
 
     .section-map-info-item {
@@ -1006,6 +1003,7 @@ header {
         padding: 0;
         padding-bottom: 250px;
     }
+
     .section-map {
         padding-bottom: 70px;
         padding-top: 50px;
@@ -1048,9 +1046,11 @@ header {
         right: 5px;
         bottom: 65px;
     }
+
     .section-map-info {
         width: 90%;
     }
+
     .section-map {
         padding-bottom: 70px;
         padding-top: 50px;
