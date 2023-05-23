@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guedes & Schettert</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css" href="assets/css/template.css" />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="home" class="header">
+            <div class="logo">
+                <div class="logoimg"><img src="assets/images/menu.gif" /></div>
+            </div>
+            <div class="menu">
+                <img class="menu-mobile" src="assets/images/menu.png" />
+                <nav>
+                    <ul>
+                        <li class="ativo"> <a href="#home">Home</a></li>
+                        <li> <a href="#sobre">Sobre nós</a></li>
+                        <li> <a href="#servicos">Serviços</a></li>
+                        <li> <a href="#projetos">Produtos</a></li>
+                        <li> <a href="#contate">Contate-nos</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="banner">
+        <div class="slyders" style="margin-left: 0;">
+            <div class="slyde">
+                <div class="slyderarea">
+                    <h1>
+                        <span id="frase-principal">UM SISTEMA DE ERP COMPLETO</span><br />
+                        <span id="frase-secundaria">PARA MELHORAR SUA EXPERIÊNCIA</span>
+                    </h1>
+                    <h2></h2>
+                    <a href="https://api.whatsapp.com/send?phone=5554999668512">Agende uma demonstração</a>
+                </div>
+            </div>
+            <div class="slyders-pontos">
+                <div class="pontos ativo"></div>
+                <div class="pontos"></div>
+                <div class="pontos"></div>
+            </div>
+        </div>
+    </section>          
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+          <h2 class="modal-title">Agende uma demonstração</h2>
+          <button class="modal-close">X</button>
+          <div class="modal-input">
+            <input type="text" id="name" placeholder="Nome">
+          </div>
+          <div class="modal-input">
+            <input type="text" id="phone" placeholder="Telefone">
+          </div>
+          <div class="modal-input">
+            <input type="email" id="email" placeholder="Email">
+          </div>
+          <div class="modal-input">
+            <input type="time" id="time" placeholder="Informe um horário de disponibilidade">
+          </div>
+          <button id="form" class="modal-button">Enviar</button>
+        </div>
+      </div>
+      
+
+        <div class="bar-meio-site"></div>
+
+        <section id="projetos" class="default dark">
+            <div class="titulo-neon">
+                <div class="section-titulo">Nossos Produtos</div>
+                <div class="barra-neon"></div>
+            </div>
+            <div class="section-body">
+                <div class="section-projetos">
+                    <div class="section-projetos-fotos">
+                        <dov class="section-projetos-foto">
+                            <div class="secetion-projetos-fotoarea">
+                                <div class="section-projetos-fotoinfo">
+                                    <a class="programas" href="https://www.rpinfo.com.br/produto/conexo-db/55"
+                                        target="_blank">
+                                    </a>
+                                    <p class="desc-produto">O ERP seguro que controla <br />o seu negócio.</p>
+                                </div>
+                                <img src="media/Target.gif" />
+                            </div>
+                        </dov>
+                        <dov class="section-projetos-foto">
+                            <div class="secetion-projetos-fotoarea">
+                                <div class="section-projetos-fotoinfo">
+                                    <a class="programas" href="https://www.rpinfo.com.br/produto/conexo-db/55"
+                                        target="_blank">
+                                    </a>
+                                    <p class="desc-produto">O ERP seguro que controla <br />o seu negócio.</p>
+                                </div>
+                                <img src="media/Flex.gif" />
+                            </div>
+                        </dov>
+                        <dov class="section-projetos-foto">
+                            <div class="secetion-projetos-fotoarea">
+                                <div class="section-projetos-fotoinfo">
+                                    <a class="programas" href="https://www.rpinfo.com.br/produto/conexo-db/55"
+                                        target="_blank">
+                                    </a>
+                                    <p class="desc-produto">Eficiência Simplificada.</p>
+                                </div>
+                                <img src="media/Conexo.gif" />
+                            </div>
+                        </dov>
+                        <dov class="section-projetos-foto">
+                            <div class="secetion-projetos-fotoarea">
+                                <div class="section-projetos-fotoinfo">
+                                    <a class="programas" href="https://www.rpinfo.com.br/produto/conexo-db/55"
+                                        target="_blank">
+                                    </a>
+                                    <p class="desc-produto">Sua pequena ou média rede com um grande Mix de soluções.
+                                        o seu negócio.</p>
+                                </div>
+                                <img src="media/Mix.gif" />
+                            </div>
+                        </dov>
+                        <dov class="section-projetos-foto">
+                            <div class="secetion-projetos-fotoarea">
+                                <div class="section-projetos-fotoinfo">
+                                    <a class="programas" href="https://www.rpinfo.com.br/produto/conexo-db/55"
+                                        target="_blank">
+                                    </a>
+                                    <p class="desc-produto">Integração entre Centrais de Compras e supermercados.</p>
+                                </div>
+                                <img src="media/LigMix.gif" />
+                            </div>
+                        </dov>
+                        <dov class="section-projetos-foto">
+                            <div class="secetion-projetos-fotoarea">
+                                <div class="section-projetos-fotoinfo">
+                                    <a class="programas" href="https://www.rpinfo.com.br/produto/conexo-db/55"
+                                        target="_blank">
+                                    </a>
+                                    <p class="desc-produto">O sistema funcional e seguro para Frente de Caixa.</p>
+                                </div>
+                                <img src="media/Rpdv.gif" />
+                            </div>
+                        </dov>
+                        <dov class="section-projetos-foto">
+                            <div class="secetion-projetos-fotoarea">
+                                <div class="section-projetos-fotoinfo">
+                                    <a class="programas" href="https://www.rpinfo.com.br/produto/conexo-db/55"
+                                        target="_blank">
+                                    </a>
+                                    <p class="desc-produto">Empresas inteligentes e eficientes têm mais lucro.</p>
+                                </div>
+                                <img src="media/Bi.gif" />
+                            </div>
+                        </dov>
+                        <dov class="section-projetos-foto">
+                            <div class="secetion-projetos-fotoarea">
+                                <div class="section-projetos-fotoinfo">
+                                    <a class="programas" href="https://www.rpinfo.com.br/produto/conexo-db/55"
+                                        target="_blank">
+                                    </a>
+                                    <p class="desc-produto">Tarefas desorganizadas nunca mais.</p>
+                                </div>
+                                <img src="media/Task.gif" />
+                            </div>
+                        </dov>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="bar-meio-site"></div>
+
+        <section id="servicos" class="default dark">
+            <div class="titulo-neon">
+                <div class="section-titulo">Nossos Serviços</div>
+                <div class="barra-neon"></div>
+            </div>
+            <div class="section-body">
+                <div class="section-services">
+                    <div class="section-service">
+                        <img src="assets/images/suporte.png" />
+                        <h4>Suporte Técnico</h4>
+                        <p>Nossa equipe de suporte técnico altamente qualificada está pronta para resolver qualquer
+                            problema que você possa encontrar. Oferecemos soluções rápidas e eficientes para garantir o
+                            bom funcionamento de seus sistemas e equipamentos.
+                        </p>
+                    </div>
+                    <div class="section-service">
+                        <img src="assets/images/commerce.png" />
+                        <h4>E-commerce</h4>
+                        <p>Descubra uma experiência de compra online excepcional em nosso e-commerce. Explore nossa
+                            ampla seleção de produtos de alta qualidade, faça pedidos com facilidade e aproveite a
+                            conveniência de entregas rápidas e seguras. </p>
+                    </div>
+                    <div class="section-service">
+                        <img src="assets/images/financeiro.png" />
+                        <h4>Suporte Financeiro</h4>
+                        <p>Oferecemos suporte financeiro especializado para empresas, garantindo soluções eficazes para
+                            a gestão financeira.
+                            contamos com uma equipe experiente para ajudar no controle de despesas.
+                            Impulsione o sucesso financeiro do seu negócio com nosso suporte especializado.</p>
+                    </div>
+                    <div class="section-service">
+                        <img src="assets/images/fiscal.png" />
+                        <h4>Suporte Fiscal</h4>
+                        <p>Descomplicamos o universo fiscal para você. Nossa equipe especializada em questões fiscais
+                            está pronta para fornecer orientações claras e precisas, ajudando você a entender e cumprir
+                            suas obrigações tributárias de maneira eficiente. </p>
+                    </div>
+                    <div class="section-service">
+                        <img src="assets/images/iphone.png" />
+                        <h4>Smart Coletor</h4>
+                        <p>Introduza a eficiência em suas operações de coleta com o Smart Coletor. Equipado com
+                            tecnologia avançada, nosso coletor inteligente oferece recursos intuitivos e automatizados,
+                            simplificando o processo de coleta e aumentando sua produtividade. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="bar-meio-site"></div>
+
+        <section id="sobre" class="default dark">
+            <div class="titulo-neon">
+                <div class="section-titulo">Sobre nós</div>
+                <div class="barra-neon"></div>
+            </div>
+            <div class="section-body">
+                <div class="section-aboutus">
+                    <div class="section-about--left">
+                        <div class="section-about--text">
+                            Bem-vindo à Guedes & Schettert! Somos uma empresa de TI sediada em Caxias do Sul, RS,
+                            especializada em soluções de software de gestão para supermercados. Oferecemos um software
+                            abrangente para simplificar o gerenciamento de estoque, vendas, compras e clientes. Além disso,
+                            fornecemos serviços de suporte fiscal, financeiro e sistêmico. Nossa equipe altamente
+                            qualificada está comprometida em oferecer soluções personalizadas para impulsionar o sucesso do
+                            seu negócio. Contate-nos para levar seu supermercado ao próximo nível.
+                            <br />
+                            Na Guedes & Schettert, nos orgulhamos de nossa equipe altamente qualificada e experiente, que
+                            está pronta para fornecer assistência personalizada e orientação especializada. Trabalhamos em
+                            estreita colaboração com cada cliente, compreendendo suas necessidades específicas e fornecendo
+                            soluções sob medida que impulsionam o crescimento e o sucesso de seus negócios.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <div class="bar-meio-site"></div>
+
+        <section id="contate" class="section-map">
+            <div class="titulo-neon">
+              <div class="section-titulo titulo-localizacao">Localização</div>
+              <div class="barra-neon"></div>
+            </div>
+            <div class="section-map-area">
+              <div class="section-map-info">
+                <div class="map-container">
+                  <div id="map">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      style="border:0"
+                      loading="lazy"
+                      allowfullscreen
+                      src="https://www.google.com/maps/embed/v1/place?q=guedes%20%26%20schettert&key=AIzaSyAEbAtj8jkvK9mc5yhKbTUvN-uexTnr7Ek"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+        
+        <div class="bar-meio-site"></div>
+
+        <footer id="servicos" class="default dark">
+            <div class="section-body">
+                <div class="section-services">
+                    <div class="section-service">
+                        <h4>Nossos Horários</h4>
+                        <p>Segunda a Sexta</p>
+                        <p>8h ao 12h e das 13h ás 19h</p>
+                        <p>Sábado e Feriados</p>
+                        <p>8h ao 12h e das 13h ás 16h</p>
+                    </div>
+                    <div class="section-service">
+                        <h4>Redes sociais</h4>
+                        <p>E-mail: <a class="final-redes"
+                            href=""> guedeseschettert@gmail.com</a></p>
+                        <p>Instagram: <a class="final-redes semclick"
+                                href="https://www.instagram.com/guedes_schettert/?hl=bn">@guedes_schettert</a></p>
+                        <p>Facebook: <a class="final-redes"
+                                href="https://www.facebook.com/people/Guedes-Schettert/100064141230635/?locale=en_GB">Guedes
+                                & Schettert</a></p>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <div class="bar"></div>
+                <p class="p">© Copyright - Todos direitos reservados para - Guedes & Schettert</p>
+            </div>
+        </footer>
+</body>
+
+    <script src="assets/java/java.js"></script>
+    
+</html>
